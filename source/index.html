@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>тестовое ПрофитКит</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/rubik-regular.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/rubik-regular.woff" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/rubik-medium.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/rubik-medium.woff" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/rubik-bold.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/rubik-bold.woff" as="font" type="font/woff2" crossorigin>
+</head>
+
+<body class="page__body">
+  <svg style="display: none">
+    <symbol id="arrow-icon" viewBox="0 0 12 21">
+        <path d="M11 1L2 10.5L11 20" stroke="black" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="comparison-icon" viewBox="0 0 20 20">
+        <path d="M1.11011 13.7679L4.35515 3.65063L7.86587 13.7679" stroke="black" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+        <path d="M12.1339 13.7679L15.3789 3.65063L18.8896 13.7679" stroke="black" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+        <circle cx="9.99998" cy="3.65061" r="1.5532" stroke="black" stroke-width="1.5" fill="none"/>
+        <path d="M11.9136 3.53931H13.3994" stroke="black" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M6.59998 3.53931H8.08582" stroke="black" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M4.48813 17.231C2.68302 17.231 1.17674 15.9515 0.826716 14.25H8.14955C7.79953 15.9515 6.29325 17.231 4.48813 17.231Z" stroke="black" stroke-width="1.5" fill="none"/>
+        <path d="M15.5121 17.231C13.7069 17.231 12.2007 15.9515 11.8506 14.25H19.1735C18.8235 15.9515 17.3172 17.231 15.5121 17.231Z" stroke="black" stroke-width="1.5" fill="none"/>
+    </symbol>
+    <symbol id="favorite-icon" viewBox="0 0 20 20">
+        <path d="M10 18C6.40583 16.4602 1.51375 12.0571 1.01457 7.00452C0.787298 4.70415 3.26091 2.00002 5.50727 2.00001C7.61203 2.00001 9.10144 3.15488 9.99998 5.0797C10.8985 3.15488 12.388 1.99999 14.4927 2C16.7391 2.00001 19.2127 4.70413 18.9854 7.00451C18.4862 12.0571 13.5942 16.4602 10 18Z" stroke="black" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="star" viewBox="0 0 48 50">
+        <path d="M22.8214 0.859771C23.5236 0.347495 24.4764 0.347495 25.1786 0.859771L30.0382 4.4046C30.3815 4.65504 30.7957 4.78961 31.2207 4.7888L37.2357 4.77735C38.105 4.7757 38.8758 5.33571 39.1428 6.16294L40.9907 11.8871C41.1212 12.2916 41.3772 12.6439 41.7215 12.893L46.5945 16.4193C47.2987 16.9289 47.5931 17.835 47.3229 18.6612L45.4533 24.3783C45.3212 24.7823 45.3212 25.2177 45.4533 25.6217L47.3229 31.3388C47.5931 32.165 47.2987 33.0711 46.5945 33.5807L41.7215 37.107C41.3772 37.3561 41.1212 37.7085 40.9907 38.1129L39.1428 43.8371C38.8758 44.6643 38.105 45.2243 37.2357 45.2226L31.2207 45.2112C30.7957 45.2104 30.3815 45.345 30.0382 45.5954L25.1786 49.1402C24.4764 49.6525 23.5236 49.6525 22.8214 49.1402L17.9618 45.5954C17.6185 45.345 17.2043 45.2104 16.7793 45.2112L10.7643 45.2226C9.89502 45.2243 9.12422 44.6643 8.85718 43.8371L7.00932 38.1129C6.87877 37.7085 6.62279 37.3561 6.27852 37.107L1.4055 33.5807C0.701283 33.0711 0.406866 32.165 0.677056 31.3388L2.5467 25.6217C2.67879 25.2177 2.67879 24.7823 2.5467 24.3783L0.677056 18.6612C0.406866 17.835 0.701284 16.9289 1.4055 16.4193L6.27852 12.893C6.62279 12.6439 6.87877 12.2916 7.00932 11.8871L8.85718 6.16294C9.12422 5.33571 9.89502 4.7757 10.7643 4.77735L16.7793 4.7888C17.2043 4.78961 17.6185 4.65504 17.9618 4.4046L22.8214 0.859771Z"/>
+    </symbol>
+    <symbol id="basket-icon" viewBox="0 0 21 18">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 1C0.5 0.447715 0.947715 0 1.5 0H3.88919C4.30755 0 4.6817 0.260434 4.82697 0.652768L5.69608 3H19.5C19.8095 3 20.1016 3.14331 20.2909 3.38811C20.4803 3.6329 20.5457 3.95159 20.4679 4.25117L19.3931 8.39351C19.0498 9.71634 17.8559 10.64 16.4892 10.64H7.73613L7.97647 11.3293C8.11652 11.7309 8.49534 12 8.92071 12H16C16.5523 12 17 12.4477 17 13C17 13.5523 16.5523 14 16 14H8.92071C7.6446 14 6.50815 13.1927 6.08798 11.9878L5.38414 9.96925C5.3727 9.93645 5.36298 9.90307 5.35501 9.86925L4.04079 4.28934L3.19311 2H1.5C0.947715 2 0.5 1.55228 0.5 1ZM6.26289 5L7.12021 8.64H16.4892C16.9448 8.64 17.3427 8.33211 17.4572 7.89117L18.2074 5H6.26289ZM9.5 16.5C9.5 17.3284 8.82843 18 8 18C7.17157 18 6.5 17.3284 6.5 16.5C6.5 15.6716 7.17157 15 8 15C8.82843 15 9.5 15.6716 9.5 16.5ZM16 18C16.8284 18 17.5 17.3284 17.5 16.5C17.5 15.6716 16.8284 15 16 15C15.1716 15 14.5 15.6716 14.5 16.5C14.5 17.3284 15.1716 18 16 18Z" fill="black"/>
+    </symbol>
+  </svg>
+  <main>
+    <h1 class="visually-hidden">Каталог</h1>
+    <div class="container">
+      <section class="tabs" id="tabs">
+        <div class="tabs__wrapper">
+          <div class="tabs__nav">
+            <button class="tabs__button tabs__button--active" type="button" data-tab="#popular">Популярные товары</button>
+            <button class="tabs__button" type="button" data-tab="#recently">Недавно купили</button>
+            <button class="tabs__button" type="button" data-tab="#interest">Вас может заинтересовать</button>
+          </div>
+        </div>
+        <div class="tabs__item tabs__item--active" id="popular">
+          <div class="slider">
+            <button class="slider__button slider__button--prev" type="button">
+              <svg width="12" height="21">
+                <use xlink:href="#arrow-icon"></use>
+              </svg>
+            </button>
+            <div class="slider__wrapper">
+            <ul class="slider__list">
+              <li class="slider__item">
+                <article class="card">
+                  <div class="card__photos">
+                    <p class="card__photos-text">нет фото</p>
+                    <div class="card__pagination">
+                    </div>
+                  </div>
+                  <div class="card__buttons">
+                    <button class="card__button" type="button" aria-label="добавить в избранное">
+                      <svg width="20" height="20">
+                        <use xlink:href="#favorite-icon"></use>
+                      </svg>
+                    </button>
+                    <button class="card__button" type="button" aria-label="добавить в список сравнения">
+                      <svg width="20" height="20">
+                        <use xlink:href="#comparison-icon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__info">
+                    <h3 class="card__name">Тарелка керамическая ручной работы ⌀12</h3>
+                    <div class="card__price">
+                      <span>600 ₽</span>
+                      <span class="card__price--old">810 ₽</span>
+                    </div>
+                    <div class="card__bottom">
+                      <div class="card__count">
+                        <button type="button" class="card__count-btn card__count-btn--minus" aria-label="Уменьшить количество на один"></button>
+                        <label for="count" class="visually-hidden">Количество</label>
+                        <input class="card__count-input" type="number" min="1" step="1" name="count" value="1" aria-label="Ввести количество">
+                        <button type="button" class="card__count-btn card__count-btn--plus" aria-label="Увеличить количество на один"></button>
+                      </div>
+                      <button class="card__buy-btn">
+                        <svg width="21" height="18">
+                          <use xlink:href="#basket-icon"></use>
+                        </svg>
+                        <span class="card__buy-text">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item">
+                <article class="card">
+                  <div class="card__photos">
+                    <p class="card__photos-text">нет фото</p>
+                    <div class="card__image active" data-number="photo-1">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-1.webp 1x, img/photo-1@2x.webp 2x">
+                        <img src="img/photo-1.jpg" srcset="img/photo-1@2x.jpg 2x" width="334" height="334"
+                          alt="Комнатное растение в белом кашпо">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-2">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-1.webp 1x, img/photo-1@2x.webp 2x">
+                        <img src="img/photo-1.jpg" srcset="img/photo-1@2x.jpg 2x" width="334" height="334"
+                          alt="Комнатное растение в белом кашпо">
+                      </picture>
+                    </div>
+                    <div class="card__pagination">
+                    </div>
+                  </div>
+                  <div class="card__buttons">
+                    <button class="card__button" type="button" aria-label="добавить в избранное">
+                      <svg width="20" height="20">
+                        <use xlink:href="#favorite-icon"></use>
+                      </svg>
+                    </button>
+                    <button class="card__button" type="button" aria-label="добавить в список сравнения">
+                      <svg width="20" height="20">
+                        <use xlink:href="#comparison-icon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__info">
+                    <h3 class="card__name">Кашпо для цветов керамическое СИМПЛГРЕЙ</h3>
+                    <div class="card__price">
+                      <span class="card__price-sale">450 ₽</span>
+                    </div>
+                    <div class="card__bottom">
+                      <div class="card__count">
+                        <button type="button" class="card__count-btn card__count-btn--minus" aria-label="Уменьшить количество на один"></button>
+                        <label for="count" class="visually-hidden">Количество</label>
+                        <input class="card__count-input" type="number" min="1" step="1" name="count" value="1" aria-label="Ввести количество">
+                        <button type="button" class="card__count-btn card__count-btn--plus" aria-label="Увеличить количество на один"></button>
+                      </div>
+                      <button class="card__buy-btn">
+                        <svg width="21" height="18">
+                          <use xlink:href="#basket-icon"></use>
+                        </svg>
+                        <span class="card__buy-text">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item">
+                <article class="card">
+                  <div class="card__photos">
+                    <p class="card__photos-text">нет фото</p>
+                    <div class="card__image active" data-number="photo-1">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-2.webp 1x, img/photo-2@2x.webp 2x">
+                        <img src="img/photo-2.jpg" srcset="img/photo-2@2x.jpg 2x" width="334" height="334"
+                          alt="Черные часы">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-2">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-2.webp 1x, img/photo-2@2x.webp 2x">
+                        <img src="img/photo-2.jpg" srcset="img/photo-2@2x.jpg 2x" width="334" height="334"
+                          alt="Черные часы">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-3">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-2.webp 1x, img/photo-2@2x.webp 2x">
+                        <img src="img/photo-2.jpg" srcset="img/photo-2@2x.jpg 2x" width="334" height="334"
+                          alt="Черные часы">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-4">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-2.webp 1x, img/photo-2@2x.webp 2x">
+                        <img src="img/photo-2.jpg" srcset="img/photo-2@2x.jpg 2x" width="334" height="334"
+                          alt="Черные часы">
+                      </picture>
+                    </div>
+                    <div class="card__pagination">
+                    </div>
+                  </div>
+                  <div class="card__tag card__tag--hit">
+                    <svg width="48" height="50">
+                      <use xlink:href="#star"></use>
+                    </svg>
+                    <span class="card__tag-text">хит</span>
+                  </div>
+                  <div class="card__buttons">
+                    <button class="card__button" type="button" aria-label="добавить в избранное">
+                      <svg width="20" height="20">
+                        <use xlink:href="#favorite-icon"></use>
+                      </svg>
+                    </button>
+                    <button class="card__button" type="button" aria-label="добавить в список сравнения">
+                      <svg width="20" height="20">
+                        <use xlink:href="#comparison-icon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__info">
+                    <h3 class="card__name">Умные часы SMARTWATCH XM 109 черный</h3>
+                    <div class="card__price">
+                      <span class="card__price-sale">12 999 ₽</span>
+                    </div>
+                    <div class="card__bottom">
+                      <div class="card__count">
+                        <button type="button" class="card__count-btn card__count-btn--minus" aria-label="Уменьшить количество на один"></button>
+                        <label for="count" class="visually-hidden">Количество</label>
+                        <input class="card__count-input" type="number" min="1" step="1" name="count" value="1" aria-label="Ввести количество">
+                        <button type="button" class="card__count-btn card__count-btn--plus" aria-label="Увеличить количество на один"></button>
+                      </div>
+                      <button class="card__buy-btn">
+                        <svg width="21" height="18">
+                          <use xlink:href="#basket-icon"></use>
+                        </svg>
+                        <span class="card__buy-text">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item">
+                <article class="card">
+                  <div class="card__photos">
+                    <p class="card__photos-text">нет фото</p>
+                    <div class="card__image active" data-number="photo-1">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-3.webp 1x, img/photo-3@2x.webp 2x">
+                        <img src="img/photo-3.jpg" srcset="img/photo-3@2x.jpg 2x" width="334" height="334"
+                          alt="Золотое кольцо с камнями">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-2">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-3.webp 1x, img/photo-3@2x.webp 2x">
+                        <img src="img/photo-3.jpg" srcset="img/photo-3@2x.jpg 2x" width="334" height="334"
+                          alt="Золотое кольцо с камнями">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-3">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-3.webp 1x, img/photo-3@2x.webp 2x">
+                        <img src="img/photo-3.jpg" srcset="img/photo-3@2x.jpg 2x" width="334" height="334"
+                          alt="Золотое кольцо с камнями">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-4">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-3.webp 1x, img/photo-3@2x.webp 2x">
+                        <img src="img/photo-3.jpg" srcset="img/photo-3@2x.jpg 2x" width="334" height="334"
+                          alt="Золотое кольцо с камнями">
+                      </picture>
+                    </div>
+                    <div class="card__image" data-number="photo-5">
+                      <picture>
+                        <source type="image/webp" srcset="img/photo-3.webp 1x, img/photo-3@2x.webp 2x">
+                        <img src="img/photo-3.jpg" srcset="img/photo-3@2x.jpg 2x" width="334" height="334"
+                          alt="Золотое кольцо с камнями">
+                      </picture>
+                    </div>
+                    <div class="card__pagination">
+                    </div>
+                  </div>
+                  <div class="card__tag card__tag--new">
+                    <svg width="48" height="50">
+                      <use xlink:href="#star"></use>
+                    </svg>
+                    <span class="card__tag-text">new</span>
+                  </div>
+                  <div class="card__buttons">
+                    <button class="card__button" type="button" aria-label="добавить в избранное">
+                      <svg width="20" height="20">
+                        <use xlink:href="#favorite-icon"></use>
+                      </svg>
+                    </button>
+                    <button class="card__button" type="button" aria-label="добавить в список сравнения">
+                      <svg width="20" height="20">
+                        <use xlink:href="#comparison-icon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__info">
+                    <h3 class="card__name">Золотое кольцо МАЛИКА с аметистом и фианитами</h3>
+                    <div class="card__price">
+                      <span class="card__price-sale">15 700 ₽</span>
+                    </div>
+                    <div class="card__bottom">
+                      <div class="card__count">
+                        <button type="button" class="card__count-btn card__count-btn--minus" aria-label="Уменьшить количество на один"></button>
+                        <label for="count" class="visually-hidden">Количество</label>
+                        <input class="card__count-input" type="number" min="1" step="1" name="count" value="1" aria-label="Ввести количество">
+                        <button type="button" class="card__count-btn card__count-btn--plus" aria-label="Увеличить количество на один"></button>
+                      </div>
+                      <button class="card__buy-btn">
+                        <svg width="21" height="18">
+                          <use xlink:href="#basket-icon"></use>
+                        </svg>
+                        <span class="card__buy-text">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            </ul>
+            </div>
+            <button class="slider__button slider__button--next" type="button">
+              <svg width="12" height="21">
+                <use xlink:href="#arrow-icon"></use>
+              </svg>
+            </button>
+          </div>
+      </section>
+    </div>
+  </main>
+  <script src="js/script.min.js"></script>
+</body>
+
+</html>
